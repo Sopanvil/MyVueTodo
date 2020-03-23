@@ -29,7 +29,7 @@ export default {
   font-family: "Montserrat", sans-serif;
 }
 body {
-  background: linear-gradient(90deg, #0111ebc2, #541f77f1, #cc0a54);
+  background: linear-gradient(90deg, #000ba3c2, #541f77f1, #cc0a54);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
