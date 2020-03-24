@@ -56,9 +56,9 @@ body {
   /* border-bottom: 3px solid #000; */
 }
 a {
-  padding: 0 10px 0 10px;
+  padding: 0 20px 0 20px;
   color: #000;
-  font-size: 20px;
+  font-size: 25px;
   text-decoration: none;
   transition: all 0.3s;
 }
