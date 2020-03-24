@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="main-text">
-        <p class="main-text-title animated fadeInUp d-flex justify-content-center">Заметки</p>
-        <p class="main-text-text animated fadeInUp d-flex justify-content-center">Lorem Ipsum - В то время н</p>
-      </div>
-    </div>  
+      
+        <p class="main-text-title animated fadeInUp">Заметки</p>
+        <p class="main-text-text animated fadeInUp ">При использовании модификаторов порядок имеет значение, потому что код генерируется в том же порядке. Поэтому v-on:click.prevent.self будет предотвращать все клики, в то время как v-on:click.self.prevent будет предотвращать клики только на самом элементе. </p>
+      
+    </div> 
   </div>
 </template>
 
@@ -16,11 +16,11 @@ export default {
 </script>
 
 <style scoped>
-.main-text{
-color: aliceblue;
-margin-top: 100px;
+.container {
+  color: #fff;
 }
 .main-text-title{
+/* text-align: center; */
 animation-duration: 1.5s;
 font-weight: 700;
 font-size: 75px;
@@ -29,24 +29,5 @@ font-size: 75px;
 animation-delay: 0.2s;
 animation-duration: 1.5s;
 font-size: 24px;
-}
-.container {
-  border: linear-gradient(90deg, #df001ec2, #6f1da7f1, #100acc) 5px;
-  padding: 100px;
-  background: linear-gradient(90deg, #df001ec2, #6f1da7f1, #100acc);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 0%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 </style>

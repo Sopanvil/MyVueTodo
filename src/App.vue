@@ -3,24 +3,42 @@
     <div class="navbarios">
       <div class="container">
         <div class="row">
-          <div class="col-md-2 offset-md-5">
-            <h1 class="header-text">TODOS</h1>
+          <div class="col-md-2">
+            <h1 class="header-text">MyTrLogic</h1>
           </div>
         </div>
         <div class="row">
-            <router-link to="/" class="col-md-6">Home</router-link>
-            <router-link to="/todos" class="col-md-6">Todos</router-link>
-          
+          <router-link to="/" class="col-md-6">Home</router-link>
+          <router-link to="/todos" class="col-md-6">Todos</router-link>
         </div>
       </div>
-      <router-view></router-view>
     </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  data: function() {
+    return {
+      bookmarks: [
+        {
+          title: "Мой понедельник",
+          todos: [
+            {
+              title: "Завтрак",
+              isActive: true
+            },
+            {
+              title: "Работа",
+              isActive: true
+            }
+          ]
+        }
+      ]
+    };
+  }
 };
 </script>
 
@@ -29,36 +47,39 @@ export default {
   font-family: "Montserrat", sans-serif;
 }
 body {
-  background: linear-gradient(90deg, #000ba3c2, #541f77f1, #cc0a54);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  /* background: linear-gradient(90deg, #fff, #fffffff1); */
+  background-color: #000;
 }
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 0%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.navbarios{
+  background-color: #fff;
+  margin-bottom: 100px;
+  /* border-bottom: 3px solid #000; */
 }
 a {
-  color: aliceblue;
+  padding: 0 10px 0 10px;
+  color: #000;
   font-size: 20px;
   text-decoration: none;
+  transition: all 0.3s;
 }
 a:hover {
-  color: rgb(0, 0, 0);
-  background-color: aliceblue;
+  color: #fff;
+  background-color: #000;
   text-decoration: none;
-  transition: all 0.6s ease-in-out;
 }
+a:focus {
+  color: #fff;
+  background-color: #000;
+  text-decoration: none;
+}
+/* a:active {
+  color: #1a1a1a;
+  background-color: #929292;
+  text-decoration: none;
 
+} */
+.header-text{
+  font-weight: 700 ;
+  color: #000;
+}
 </style>
-
-
-
-  git config --global user.email "lenivkov12@gmail.com"
-  git config --global user.name "Sopanvil"
