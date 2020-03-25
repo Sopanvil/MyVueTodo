@@ -11,8 +11,10 @@ export default new VueRouter({
     routes: [
         {
             path: '/todos',
-            name: 'todo',
-            component: Todo
+            name: 'todos',
+            component: Todo,
+            props: true,
+            params: 'bookmarks'
         },
         {
             path: '/',

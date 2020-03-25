@@ -8,12 +8,12 @@
           </div>
         </div>
         <div class="row">
-          <router-link to="/" class="col-md-6">Home</router-link>
-          <router-link to="/todos" class="col-md-6">Todos</router-link>
+          <router-link :to="{name: 'main'}" class="col-md-6">Home</router-link>
+          <router-link :to="{name: 'todos'}" class="col-md-6">Todos</router-link>
         </div>
       </div>
     </div>
-    <router-view></router-view>
+    <router-view ></router-view>
   </div>
 </template>
 
@@ -22,21 +22,7 @@ export default {
   name: "App",
   data: function() {
     return {
-      bookmarks: [
-        {
-          title: "Мой понедельник",
-          todos: [
-            {
-              title: "Завтрак",
-              isActive: true
-            },
-            {
-              title: "Работа",
-              isActive: true
-            }
-          ]
-        }
-      ]
+      
     };
   }
 };
@@ -47,13 +33,11 @@ export default {
   font-family: "Montserrat", sans-serif;
 }
 body {
-  /* background: linear-gradient(90deg, #fff, #fffffff1); */
   background-color: #000;
 }
 .navbarios{
   background-color: #fff;
   margin-bottom: 100px;
-  /* border-bottom: 3px solid #000; */
 }
 a {
   padding: 0 20px 0 20px;
@@ -72,12 +56,6 @@ a:focus {
   background-color: #000;
   text-decoration: none;
 }
-/* a:active {
-  color: #1a1a1a;
-  background-color: #929292;
-  text-decoration: none;
-
-} */
 .header-text{
   font-weight: 700 ;
   color: #000;
