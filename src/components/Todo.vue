@@ -9,7 +9,7 @@
       <div class="tasks-input animated fadeInRight col-md-4 col-xs-12">
         <input class="tasks-input-text " type="text" v-model="newTask" placeholder="Создайте задачу">
       </div>
-      <div class="tasks-input-b col-md-6 animated fadeInRight col-xs-12">
+      <div class="tasks-input-b col-md-6 animated fadeInLeft col-xs-12">
         <input class="tasks-input-button" type="button" value="Добавить">
       </div>
     </div>
@@ -48,9 +48,9 @@ export default {
 </script>
 
 <style>
-hr{
+/* hr{
   border-bottom: 1px solid #fff;
-}
+} */
 .tasks{
   margin-top: 100px;
   font-weight: 700;
@@ -58,10 +58,6 @@ hr{
   padding: 10px;
   color: #000;
   background-color: #fff;
-/* animation-delay: 0.2s;
-animation-duration: 1.5s; */
-
-
 }
 .tasks-title{
   padding-right: 0;
@@ -77,22 +73,19 @@ animation-duration: 1.5s; */
 .tasks-input-b{
   padding-right: 0;
   padding-left: 0;
+  /* animation-delay: 0.2s;
+  animation-duration: 1.5s; */
 }
 .tasks-input-text{
   border: none;
-  /* border: #000 1px solid; */
   padding: 10px;
   width: 100%;
-
-  /* border-bottom: 2px solid #080bd1; */
   margin-bottom: 25px;
 }
 .tasks-input-button{
-  /* font-weight: bold; */
   border: none;
   border-left: #000 1px solid;
   background-color: #fff;
   padding: 10px 50px 10px 50px;
-  /* margin-left: 5px; */
 }
 </style>
