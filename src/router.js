@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Todo from './components/Todo'
+import Tasks from './components/Tasks'
+import SelectedTodo from './components/SelectedTodo'
 import Main from './components/Main'
 
 
@@ -12,14 +13,17 @@ export default new VueRouter({
         {
             path: '/todos',
             name: 'todos',
-            component: Todo,
-            props: true,
-            params: 'bookmarks'
+            component: Tasks,
         },
         {
             path: '/',
             name: 'main',
             component: Main
+        },
+        {
+            path: '/todos/:id',
+            name: 'todo',
+            component: SelectedTodo
         }
     ],
     mode: 'history'

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       
-        <p class="main-text-title animated fadeInUp">Заметки</p>
+        <p class="main-text-title animated fadeInUp">Заметки </p>
         <p class="main-text-text animated fadeInUp ">При использовании модификаторов порядок имеет значение, потому что код генерируется в том же порядке. Поэтому v-on:click.prevent.self будет предотвращать все клики, в то время как v-on:click.self.prevent будет предотвращать клики только на самом элементе. </p>
       
     </div> 

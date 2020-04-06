@@ -8,8 +8,8 @@
           </div>
         </div>
         <div class="row">
-          <router-link :to="{name: 'main'}" class="col-md-6">Home</router-link>
-          <router-link :to="{name: 'todos'}" class="col-md-6">Todos</router-link>
+          <router-link :to="{name: 'main'}" class="col-md-6">Главная</router-link>
+          <router-link :to="{name: 'todos'}" class="col-md-6">Задачи</router-link>
         </div>
       </div>
     </div>
@@ -51,11 +51,7 @@ a:hover {
   background-color: #000;
   text-decoration: none;
 }
-a:focus {
-  color: #fff;
-  background-color: #000;
-  text-decoration: none;
-}
+
 .header-text{
   font-weight: 700 ;
   color: #000;

@@ -2,47 +2,62 @@
   <div class="container">
     <div class="row">
       <div class="tasks-title animated fadeInLeft col-6">
-        <p>Ваши Задачи {{newTask}}</p>
+        <p>Ваши Задачи</p>
       </div>
     </div>
     <div class="row">
-      <div class="tasks-input animated fadeInRight col-md-4 col-xs-12">
+      <div class="tasks-input animated fadeInLeft col-md-4 col-xs-12">
         <input class="tasks-input-text " type="text" v-model="newTask" placeholder="Создайте задачу">
       </div>
       <div class="tasks-input-b col-md-6 animated fadeInLeft col-xs-12">
-        <input class="tasks-input-button" type="button" value="Добавить">
+        <input class="tasks-input-button" type="button" value="Добавить" @click="addTodoTask(newTask)">
       </div>
     </div>
     <div class="row">
       <div v-for="(t, index) in tasks" :key="index" class="tasks col animated fadeInLeft col-md-12">
-        {{t.title}}
+        <label @click="al(index)">{{t.task}}</label>
+        <button type="submit" @click="removeTask(index)">Удалить</button>
+        <router-link :to="'/todos/' + index" class="col-md-6">Перейти</router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
-  name: "Todo",
-  data: function() {
+  name: "Tasks",
+  data () {
     return {
-      tasks: [
-        {
-          title: "Мой понедельник",
-          todos: [
-            {
-              title: "Завтрак",
-              isActive: true
-            },
-            {
-              title: "Работа",
-              isActive: true
-            }
-          ]
-        }
-      ],
-      newTask: ''
+      newTask: '',
     };
+  },
+  mounted() {
+    this.findTasks()
+  },
+  computed: {
+    ...mapGetters([
+      'tasks'
+    ]),
+  },
+  methods: {
+    ...mapActions([
+      'addTask',
+      'removeTask',
+      'findTasks'
+    ]),
+    al(id) {
+      console.log(id)
+    },
+    addTodoTask(text) {
+      this.addTask(text)
+      this.newTask = ''
+    },
+    removeTodoTask(id) {
+      console.log(id)
+      this.removeTask(id)
+    }
   }
 };
 </script>
@@ -52,10 +67,18 @@ export default {
   border-bottom: 1px solid #fff;
 } */
 .tasks{
-  margin-top: 100px;
+  margin-top: 50px;
   font-weight: 700;
   font-size: 30px;
   padding: 10px;
+  color: #000;
+  background-color: #fff;
+}
+.tasks-todo{
+  /* margin-top: 100px; */
+  font-weight: 700;
+  font-size: 30px;
+  /* padding: 10px; */
   color: #000;
   background-color: #fff;
 }
