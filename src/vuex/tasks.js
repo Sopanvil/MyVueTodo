@@ -29,6 +29,9 @@ export default new Vuex.Store({
         isDone: false,
       });
     },
+    setArrTask(state, tasksArr){
+        state.tasks.todos = tasksArr
+    },
     // Сохранение данных в localStorage
     saveTask(state) {
       localStorage.setItem("tasks", JSON.stringify(state.tasks));
@@ -46,6 +49,10 @@ export default new Vuex.Store({
     addTodo({ commit }, [todo, id]) {
       commit("setTodo", [todo, id]);
       commit("saveTask");
+    },
+    saveArr({ commit }, tasksArr){
+        commit("setArrTask", tasksArr);
+        commit("saveTask");
     },
     // Проверка задач на наличие
     findTasks({ commit }) {

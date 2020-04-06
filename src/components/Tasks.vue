@@ -32,10 +32,10 @@
         class="tasks col animated fadeInLeft col-md-12"
       >
         <label @click="al(index)">{{ t.task }}</label>
-        <button type="submit" @click="removeTask(index)">Удалить</button>
-        <router-link :to="'/todos/' + index" class="col-md-6">
+        <router-link :to="'/todos/' + index" class="col-md-3 offset-1">
           Перейти
         </router-link>
+        <button class="delete-task align-self-end" type="submit" @click="removeTask(index)">X</button>
       </div>
     </div>
   </div>
@@ -114,5 +114,18 @@ export default {
   border-left: #000 1px solid;
   background-color: #fff;
   padding: 10px 50px 10px 50px;
+}
+.delete-task{
+  padding: 0 20px 0 20px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+  font-size: 25px;
+  transition: all 0.3s;
+}
+.delete-task:hover {
+  color: #fff;
+  background-color: #a80000;
+  text-decoration: none;
 }
 </style>
