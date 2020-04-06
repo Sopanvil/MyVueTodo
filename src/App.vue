@@ -8,23 +8,25 @@
           </div>
         </div>
         <div class="row">
-          <router-link :to="{name: 'main'}" class="col-md-6">Главная</router-link>
-          <router-link :to="{name: 'todos'}" class="col-md-6">Задачи</router-link>
+          <router-link :to="{ name: 'main' }" class="col-md-6">
+            Главная
+          </router-link>
+          <router-link :to="{ name: 'todos' }" class="col-md-6">
+            Задачи
+          </router-link>
         </div>
       </div>
     </div>
-    <router-view ></router-view>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
   name: "App",
-  data: function() {
-    return {
-      
-    };
-  }
+  data: function () {
+    return {};
+  },
 };
 </script>
 
@@ -35,7 +37,7 @@ export default {
 body {
   background-color: #000;
 }
-.navbarios{
+.navbarios {
   background-color: #fff;
   margin-bottom: 100px;
 }
@@ -52,8 +54,8 @@ a:hover {
   text-decoration: none;
 }
 
-.header-text{
-  font-weight: 700 ;
+.header-text {
+  font-weight: 700;
   color: #000;
 }
 </style>

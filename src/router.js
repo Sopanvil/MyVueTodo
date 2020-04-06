@@ -5,7 +5,6 @@ import Tasks from './components/Tasks'
 import SelectedTodo from './components/SelectedTodo'
 import Main from './components/Main'
 
-
 Vue.use(VueRouter)
 
 export default new VueRouter({
