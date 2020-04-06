@@ -3,10 +3,12 @@
     <div class="navbarios">
       <div class="container">
         <div class="row">
+          <!-- Текст в шапке -->
           <div class="col-md-2">
             <h1 class="header-text">MyTrLogic</h1>
           </div>
         </div>
+        <!-- Переход в шапке -->
         <div class="row">
           <router-link :to="{ name: 'main' }" class="col-md-6">
             Главная

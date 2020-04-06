@@ -5,6 +5,7 @@
         <p>Ваши Задачи</p>
       </div>
     </div>
+    <!-- Форма -->
     <div class="row">
       <div class="tasks-input animated fadeInLeft col-md-4 col-xs-12">
         <input
@@ -23,6 +24,7 @@
         />
       </div>
     </div>
+    <!-- Список Задач -->
     <div class="row">
       <div
         v-for="(t, index) in tasks"
@@ -57,13 +59,12 @@ export default {
   },
   methods: {
     ...mapActions(["addTask", "removeTask", "findTasks"]),
-    al(id) {
-      console.log(id);
-    },
+    // Добавление новой задачи, отправка в vuex
     addTodoTask(text) {
       this.addTask(text);
       this.newTask = "";
     },
+    // Удаление новой задачи, отправка в vuex
     removeTodoTask(id) {
       console.log(id);
       this.removeTask(id);

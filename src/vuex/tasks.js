@@ -8,9 +8,11 @@ export default new Vuex.Store({
     tasks: [],
   },
   mutations: {
+    // Обновление данных из localStorage
     updateTasks(state, tasks) {
       state.tasks = tasks;
     },
+    // Добавление задачи
     setTask(state, task) {
       state.tasks.push({
         task: task,
@@ -20,12 +22,14 @@ export default new Vuex.Store({
     deleteTask(state, id) {
       state.tasks.splice(id, 1);
     },
+    // Добавление todo
     setTodo(state, [todo, id]) {
       state.tasks[id].todos.push({
         todo: todo,
         isDone: false,
       });
     },
+    // Сохранение данных в localStorage
     saveTask(state) {
       localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
@@ -43,6 +47,7 @@ export default new Vuex.Store({
       commit("setTodo", [todo, id]);
       commit("saveTask");
     },
+    // Проверка задач на наличие
     findTasks({ commit }) {
       if (JSON.parse(localStorage.getItem("tasks")) != null) {
         let tasks = JSON.parse(localStorage.getItem("tasks"));

@@ -3,6 +3,7 @@
     <div class="row">
       <h1>Выбранная Заметка - {{ task }}</h1>
     </div>
+    <!-- Форма -->
     <div class="row">
       <div class="tasks-input animated fadeInLeft col-md-4 col-xs-12">
         <input
@@ -21,8 +22,9 @@
         />
       </div>
     </div>
+    <!-- Список Todo  -->
     <div class="row">
-      <div class="">
+      <div class="todo-list">
         <div v-for="(td, index) in todos" :key="index">
           <label>{{ td.todo }}</label>
           <input type="checkbox" v-model="td.isDone" />
@@ -54,9 +56,10 @@ export default {
   },
   methods: {
     ...mapActions(["findTasks", "addTodo"]),
+    // Запись текущих данных todo по текущей задаче
     activateData() {
       (this.task = this.tasks[this.id].task),
-        (this.todos = this.tasks[this.id].todos);
+      (this.todos = this.tasks[this.id].todos);
     },
     addNewTodo(todo, id) {
       this.addTodo([todo, id]);
